@@ -17,6 +17,8 @@ for i in range(num_tasks):
 shake = input("Enter shake to choose a task: ")
 if shake.lower() == "shake":
     print(random.choice(tasks))
+else: 
+    print("Invalid input. No problem, have a good day!")
 
 
 

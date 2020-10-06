@@ -15,7 +15,7 @@ def countdown(t):
         time.sleep(1)
         converted_t -= 1
 
-    print('You failed to complete: print[list]')
+    input('Did you complete your task? (Yes or No): ')
 
 
 # input time in minutes
