@@ -22,3 +22,10 @@ else:
 
 
 
+input_complete = input('Did you complete your task? (Yes or No): ')
+if input_complete.lower() == "yes":
+    task_again = input("Congrats! You've completed your task. Would you like to try again? (Yes or No): ")
+        
+        
+
+
