@@ -15,7 +15,11 @@ def countdown(t):
         time.sleep(1)
         converted_t -= 1
 
-    input('Did you complete your task? (Yes or No): ')
+    input_complete = input('Did you complete your task? (Yes or No): ')
+    if input_complete.lower() == "yes":
+        task_again = print("Congrats! You've completed your task. Would you like to try again? (Yes or No): ")
+        
+
 
 
 # input time in minutes
