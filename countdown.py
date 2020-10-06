@@ -7,7 +7,6 @@ import time
 def countdown(t):
     converted_t = int(t) * 60
 
-    
     while converted_t >= 0:
         hours, quotient = divmod(converted_t, 3600)
         mins, secs = divmod(quotient, 60)
@@ -16,7 +15,7 @@ def countdown(t):
         time.sleep(1)
         converted_t -= 1
 
-   
+
 # input time in minutes
 t = input("Enter the time in minutes: ")
 
@@ -25,3 +24,4 @@ if start_countdown.lower() == 'start':
     # function call
     countdown(int(t))
 else:
+    print("Invalid Input. Try Again.")
