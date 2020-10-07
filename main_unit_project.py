@@ -3,10 +3,16 @@ import countdown
 
 
 print("What's up everybody! Welcome to MagicCheck")
-print("Here, you will enter tasks needed to be done in a Magic 8-ball.")
-print("Shake the Magic 8-ball to randomly pick which task to do next, and it will start your timer.")
-print("Set the timer for however many minutes you would like.")
-print("Once your time is up, click \"Yes\" or \"No\" to check off the task.")
+spacebar = input("Hit spacebar to proceed. ")
+if spacebar == " ":
+    print("Here, you will enter tasks needed to be done in a Magic 8-ball.")
+
+spacebar = input("Hit spacebar to proceed. ")
+
+if spacebar == " ":
+    print("Shake the Magic 8-ball to randomly pick which task to do next, and it will start your timer.")
+    print("Set the timer for however many minutes you would like.")
+    print("Once your time is up, click \"Yes\" or \"No\" to check off the task.")
 
 num_tasks = int(input("How many tasks will you be completing today? "))
 tasks = []
@@ -17,15 +23,16 @@ for i in range(num_tasks):
 for i in range(num_tasks):
     shake = input("Enter shake to choose a task: ")
     shake_validation == countdown.is_valid(shake.lower())
+    # shake command validation
     while shake_validation == False:
         print("Invalid input. Try Again.")
         shake = input("Enter shake to choose a task: ")
-        shake_validation == countdown.is_valid(shake)
 
     # input time in minutes
     t = input("Enter the time in minutes: ")
 
     start_countdown = str(input("Enter 'Start' to begin countdown: "))
+    while 
     # function call
     countdown(int(t))
 

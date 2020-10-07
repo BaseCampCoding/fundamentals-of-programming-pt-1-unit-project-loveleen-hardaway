@@ -23,6 +23,7 @@ def input_complete_valid(input_complete: str) -> str:
 def input_shake_valid(shake: str) -> str:
     """Return if the input is shake
     """
+    for shake.lower() in valid_inputs:
     if shake.lower() == "shake":
         print(random.choice(tasks))
     else:
