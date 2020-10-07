@@ -16,12 +16,9 @@ def countdown(t):
         converted_t -= 1
 
 
-# input time in minutes
-t = input("Enter the time in minutes: ")
-
-start_countdown = str(input("Enter 'Start' to begin countdown: "))
-if start_countdown.lower() == 'start':
-    # function call
-    countdown(int(t))
-else:
-    print("Invalid Input. Try Again.")
+# input validation loop for trying the same task again.
+def try_again_input(try_same_task_again: str) -> bool:
+    if try_same_task_again == "yes":
+        return False
+    elif try_same_task_again == "no":
+        return True
