@@ -3,18 +3,18 @@ import countdown
 import inputValidation
 
 print("What's up everybody! Welcome to MagicCheck")
-spacebar = input("Hit spacebar to proceed. ")
+spacebar = input("Hit spacebar + enter to proceed. ")
 if spacebar == " ":
     print("Here, you will enter tasks needed to be done in a Magic 8-ball.")
 
-spacebar = input("Hit spacebar to proceed. ")
+spacebar = input("Hit spacebar + enter to proceed. ")
 
 if spacebar == " ":
     print("Shake the Magic 8-ball to randomly pick which task to do next, and it will start your timer.")
     print("Set the timer for however many minutes you would like.")
     print("Once your time is up, click \"Yes\" or \"No\" to check off the task.")
 
-spacebar = input("Hit spacebar to proceed. ")
+spacebar = input("Hit spacebar + enter to proceed. ")
 if spacebar == " ":
     num_tasks = int(input("How many tasks will you be completing today? "))
 
@@ -58,9 +58,11 @@ for i in range(num_tasks):
         print("Invalid input. Try Again.")
         input_complete = input('Did you complete your task? (Yes or No): ')
         input_complete_validation = inputValidation.input_complete_valid(input_complete.lower())
-
+        
     if input_complete.lower() == "yes":
         # NEEDS TO REMOVE TASK JUST DONE RIGHT HERE
+        updated_tasks = tasks.remove(task_shook)
+
         task_again = input(f"Congrats! You've completed your task. You have {tasks} left to do. Would you like to try again? (Yes or No): ")
         if task_again.lower() == "yes":
             continue
@@ -95,6 +97,8 @@ for i in range(num_tasks):
 
                 if input_complete.lower() == "yes":
                     # NEEDS TO REMOVE TASK JUST DONE RIGHT HERE
+                    updated_tasks = tasks.remove(task_shook)
+
                     task_again = input(f"Congrats! You've completed your task. You have {tasks} left to do. Would you like to try again? (Yes or No): ")
                     if task_again.lower() == "yes":
                         continue
@@ -105,5 +109,8 @@ for i in range(num_tasks):
                     try_again = inputValidation.try_again_input(try_same_task_again)
             if try_again == True:
                 break
+
+# results of fastest task vs. slowest task
+
 
 print("See you later!")
