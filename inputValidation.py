@@ -15,10 +15,10 @@ def is_valid_input(start: str) -> bool:
 def input_complete_valid(input_complete: str) -> bool:
     """Return if the input is valid.
     """
-    if input_complete == "yes":
-        return False
-    elif input_complete == "no":
+    if input_complete == "yes" or "no":
         return True
+    else:
+        return False
 
 
 def input_shake_valid(shake: str) -> bool:
