@@ -63,7 +63,19 @@ for i in range(num_tasks):
         # NEEDS TO REMOVE TASK JUST DONE RIGHT HERE
         updated_tasks = tasks.remove(task_shook)
 
-        task_again = input(f"Congrats! You've completed your task. You have {tasks} left to do. Would you like to try again? (Yes or No): ")
+        # i==0 means you are the first place
+        # t is overwritten each time
+        # task_shook is overwritten each time
+        # task_shook will always be associated with it's t because it is in the same iteration
+        if i == 0:
+            minimum_time = t
+            minimum_task = task_shook
+        else:
+            if t < minimum_time:
+                minimum_time = t
+                minimum_task = task_shook
+
+        task_again = input(f"Congrats! {minimum_task} is the fastest task you've completed so far. You have {tasks} left to do. Would you like to try again? (Yes or No): ")
         if task_again.lower() == "yes":
             continue
         elif task_again.lower() == "no":
