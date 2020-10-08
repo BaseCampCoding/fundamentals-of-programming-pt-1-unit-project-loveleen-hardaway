@@ -6,34 +6,35 @@ valid_inputs = [
 
 def is_valid_input(start: str) -> bool:
     for input in valid_inputs:
-        if start.lower() == input:
+        if start.lower() in valid_inputs[1]:
             return True
-    return False
+        else:
+            return False
 
 
-def input_complete_valid(input_complete: str) -> str:
+def input_complete_valid(input_complete: str) -> bool:
     """Return if the input is valid.
     """
-    if input_complete == "yes":
-        print("Congrats! You've completed your task. Would you like to try again? (Yes or No): ")
-    elif input_complete == "no":
-        print("Would you like to try again")
+    if input_complete == "yes" or "no":
+        return True
+    else:
+        return False
 
 
-def input_shake_valid(shake: str) -> str:
+def input_shake_valid(shake: str) -> bool:
     """Return if the input is shake
     """
-    if shake.lower() == "shake":
-        print(random.choice(tasks))
-    else:
-        print("Invalid input. No problem, have a good day!")
+    for input in valid_inputs:
+        if shake.lower() == "shake":
+            return True
+        else:
+            return False
 
 
-while True:
-    input_name = input("What is your name? ")
-    is_valid = is_valid_input(input_name)
-    if is_valid:
-        print("If your name is valid. ")
-        break
-    else:
-        print("If your name is invalid.")
+
+# input validation loop for trying the same task again.
+def try_again_input(try_same_task_again: str) -> bool:
+    if try_same_task_again == "yes":
+        return False
+    elif try_same_task_again == "no":
+        return True
