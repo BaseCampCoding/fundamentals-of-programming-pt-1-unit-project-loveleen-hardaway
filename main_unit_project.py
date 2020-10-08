@@ -126,3 +126,10 @@ for i in range(num_tasks):
 
 
 print("See you later!")
+
+
+
+# how to store stopwatch time
+# begin = time.time()
+# end = time.time()
+# time_elapsed = int(begin - end)
