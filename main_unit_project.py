@@ -4,19 +4,17 @@ import inputValidation
 
 print("What's up everybody! Welcome to MagicCheck")
 spacebar = input("Hit spacebar + enter to proceed. ")
-if spacebar == " ":
-    print("Here, you will enter tasks needed to be done in a Magic 8-ball.")
+print("Here, you will enter tasks needed to be done in a Magic 8-ball.")
 
 spacebar = input("Hit spacebar + enter to proceed. ")
 
-if spacebar == " ":
-    print("Shake the Magic 8-ball to randomly pick which task to do next, and it will start your timer.")
-    print("Set the timer for however many minutes you would like.")
-    print("Once your time is up, click \"Yes\" or \"No\" to check off the task.")
+
+print("Shake the Magic 8-ball to randomly pick which task to do next, and it will start your timer.")
+print("Set the timer for however many minutes you would like.")
+print("Once your time is up, click \"Yes\" or \"No\" to check off the task.")
 
 spacebar = input("Hit spacebar + enter to proceed. ")
-if spacebar == " ":
-    num_tasks = int(input("How many tasks will you be completing today? "))
+num_tasks = int(input("How many tasks will you be completing today? "))
 
 tasks = []
 for i in range(num_tasks):
@@ -132,4 +130,4 @@ print("See you later!")
 # how to store stopwatch time
 # begin = time.time()
 # end = time.time()
-# time_elapsed = int(begin - end)
+# time_elapsed = int(begin - end)ye
