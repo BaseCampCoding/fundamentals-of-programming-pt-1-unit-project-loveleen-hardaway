@@ -1,28 +1,28 @@
 import random
-import countdown
 import inputValidation
+import time
 
 print("What's up everybody! Welcome to MagicCheck")
-spacebar = input("Hit spacebar + enter to proceed. ")
-print("Here, you will enter tasks needed to be done in a Magic 8-ball.")
+spacebar = input("\nHit enter to proceed. ")
+print("\nHere, you will enter tasks needed to be done in a Magic 8-ball.")
 
-spacebar = input("Hit spacebar + enter to proceed. ")
+spacebar = input("\nHit enter to proceed. ")
 
 
-print("Shake the Magic 8-ball to randomly pick which task to do next, and it will start your timer.")
+print("\nShake the Magic 8-ball to randomly pick which task to do next, and it will start your timer.")
 print("Set the timer for however many minutes you would like.")
 print("Once your time is up, click \"Yes\" or \"No\" to check off the task.")
 
-spacebar = input("Hit spacebar + enter to proceed. ")
-num_tasks = int(input("How many tasks will you be completing today? "))
+spacebar = input("\nHit enter to proceed. ")
+num_tasks = int(input("\nHow many tasks will you be completing today? "))
 
 tasks = []
 for i in range(num_tasks):
-    task = str(input("What would you like to get done today? "))
+    task = str(input("\nWhat would you like to get done today? "))
     tasks.append(task)
 
 for i in range(num_tasks):
-    shake = input("Enter shake to choose a task: ")
+    shake = input("\nEnter shake to choose a task: ")
 
     # shake command validation
     shake_validation = inputValidation.input_shake_valid(shake.lower())
@@ -34,20 +34,29 @@ for i in range(num_tasks):
     print(task_shook)
 
 
-    # input time in minutes
-    t = input("Enter the time in minutes: ")
-
-    start = str(input("Enter 'Start' to begin countdown: "))
-    # start command input validation
-    start_command_validation = inputValidation.is_valid_input(start.lower())
-    while start_command_validation == False:
-        print("Invalid input. Try Again.")
-        start = str(input("Enter 'Start' to begin countdown: "))
-        start_command_validation= inputValidation.is_valid_input(start.lower())
 
 
     # function call
-    countdown.countdown(int(t))
+    t = input("How many minutes/ seconds?: ")
+    def countdown():
+        global t
+        choice = input("Do you want seconds or minutes counting down? ")
+        
+        if choice == "seconds":
+            converted_t = int(t)
+        elif choice == "minutes":
+            converted_t = int(t) * 60
+
+
+        while converted_t >= 0:
+            hours, quotient = divmod(converted_t, 3600)
+            mins, secs = divmod(quotient, 60)
+            timer = '{:02d}:{:02d}:{:02d}'.format(hours, mins, secs)
+            print(timer, end="\r")
+            time.sleep(1)
+            converted_t -= 1
+
+    countdown()
 
 
     input_complete = input('Did you complete your task? (Yes or No): ')
@@ -118,8 +127,9 @@ for i in range(num_tasks):
                     try_same_task_again = input("Would you like to try the same task again? (Yes or No): ")
                     try_again = inputValidation.try_again_input(try_same_task_again)
         elif try_again == "no":
-            print("See you later!")
+            continue
 
+print("See you later!")
 # results of fastest task vs. slowest task
 
 

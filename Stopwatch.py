@@ -1,16 +1,16 @@
 import time
+def stopwatch():
+    start = input("Press enter to start the timer")
+    print("the timer has started")
 
-start = input("Press enter to start the timer")
-print("the timer has started")
+    begin = time.time()
 
-begin = time.time()
+    endtimer = input("Press enter to stop the timer")
 
-endtimer = input("Press enter to stop the timer")
+    end = time.time()
 
-end = time.time()
+    elapsed = end - begin
 
-elapsed = end - begin
+    elapsed = int(elapsed)
 
-elapsed = int(elapsed)
-
-print("The time elapsed is", elapsed,)
+    print("The time elapsed is", elapsed,)
