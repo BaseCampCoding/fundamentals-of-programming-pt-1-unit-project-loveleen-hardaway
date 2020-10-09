@@ -2,7 +2,7 @@ import random
 import inputValidation
 import time
 
-print("What's up everybody! Welcome to MagicCheck")
+print("\nWhat's up everybody! Welcome to MagicCheck")
 spacebar = input("\nHit enter to proceed. ")
 print("\nHere, you will enter tasks needed to be done in a Magic 8-ball.")
 
@@ -37,7 +37,16 @@ for i in range(num_tasks):
 
 
     # function call
-    t = input("How many minutes/ seconds?: ")
+    
+    while True:
+        t = input("How many minutes/ seconds?: ")
+        if t.isdigit():
+            t = int(t)
+            break
+        else:
+            print("Please enter an integer.")
+
+
     def countdown():
         global t
         choice = input("Do you want seconds or minutes counting down? ")

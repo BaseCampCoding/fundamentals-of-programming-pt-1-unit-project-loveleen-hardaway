@@ -38,3 +38,14 @@ def try_again_input(try_same_task_again: str) -> bool:
         return True
     else:
         return False
+
+
+# input validation loop for minutes or seconds.
+def valid_time_int(t: str):
+    while True:
+        if t.isdigit():
+            t = int(t)
+    else:
+        print("Please enter an integer.")
+
+
