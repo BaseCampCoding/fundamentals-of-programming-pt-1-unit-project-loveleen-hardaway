@@ -82,7 +82,7 @@ for i in range(num_tasks):
         try_same_task_again = input("Would you like to try the same task again? (Yes or No): ")
         try_again = inputValidation.try_again_input(try_same_task_again)
         # starts over the same task 
-        while try_again == False:
+        if try_again == "yes":
             # input time in minutes
             t = input("Enter the time in minutes: ")
 
@@ -117,13 +117,12 @@ for i in range(num_tasks):
                 elif input_complete.lower() == "no":
                     try_same_task_again = input("Would you like to try the same task again? (Yes or No): ")
                     try_again = inputValidation.try_again_input(try_same_task_again)
-            if try_again == True:
-                break
+        elif try_again == "no":
+            print("See you later!")
 
 # results of fastest task vs. slowest task
 
 
-print("See you later!")
 
 
 

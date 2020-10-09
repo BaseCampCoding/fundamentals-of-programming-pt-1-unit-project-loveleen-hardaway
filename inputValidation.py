@@ -35,6 +35,6 @@ def input_shake_valid(shake: str) -> bool:
 # input validation loop for trying the same task again.
 def try_again_input(try_same_task_again: str) -> bool:
     if try_same_task_again == "yes":
-        return False
-    elif try_same_task_again == "no":
         return True
+    else:
+        return False
